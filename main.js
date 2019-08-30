@@ -4,8 +4,8 @@ const axios = require("axios");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("Minha API")
-})
+  res.send("Minha API");
+});
 
 app.get("/:city", async (req, res) => {
   const response = await verificaCidade(req.params.city);
@@ -20,4 +20,4 @@ const verificaCidade = async cidade => {
   return response;
 };
 
-app.listen(3000);
+app.listen(3000 || process.env.PORT);
