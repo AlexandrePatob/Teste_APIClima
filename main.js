@@ -3,9 +3,9 @@ const axios = require("axios");
 
 const app = express();
 
-// app.get("/", (req, res) => {
-//     res.send("Minha API")
-// })
+app.get("/", (req, res) => {
+    res.send("Minha API")
+})
 
 app.get("/:city", async (req, res) => {
   const response = await verificaCidade(req.params.city);
